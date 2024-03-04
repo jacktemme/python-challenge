@@ -14,7 +14,6 @@ with open(budget_csv) as csvfile:
     next(csvreader, None)
 
 
-
     for row in csvreader:
         total_amount = total_amount + int(row[1])
         months.append(row[0])
