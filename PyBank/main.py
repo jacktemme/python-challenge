@@ -7,18 +7,18 @@ budget_csv = os.path.join("/Users/jacktemme/Desktop/python-challenge/PyBank/Reso
 months = []
 profits = []
 total_amount = 0
-firstline = True
+
 
 with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
+    next(csvreader, None)
+
+
 
     for row in csvreader:
-        if firstline:
-            firstline = False
-        else:
-            total_amount = total_amount + int(row[1])
-            months.append(row[0])
-            profits.append(row[1])
+        total_amount = total_amount + int(row[1])
+        months.append(row[0])
+        profits.append(row[1])
 
   
 month_count = len(months)
