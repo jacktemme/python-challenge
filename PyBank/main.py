@@ -42,3 +42,16 @@ print(f"Average: {round(average_change, 2)}")
 print(f"Greatest Increase in profits: {months[date_index + 1]} (${max_change})")
 print(f"Greatest Decrease in profits: {months[date_index1 + 1]} (${min_change})")
 
+out_file = os.path.join("Profit_Results.csv")
+
+
+with open (out_file,"w", newline="") as file:
+    writer = csv.writer(file)
+
+    writer.writerow(["Financial Analysis"])
+    writer.writerow(["-------------------"]) 
+    writer.writerow([f"Total Months: {month_count}"])
+    writer.writerow([f"Total: ${total_amount}"])
+    writer.writerow([f"Average: {round(average_change, 2)}"])
+    writer.writerow([f"Greatest Increase in profits: {months[date_index + 1]} (${max_change})"])
+    writer.writerow([f"Greatest Decrease in profits: {months[date_index1 + 1]} (${min_change})"])
