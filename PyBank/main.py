@@ -1,7 +1,7 @@
 import os
 import csv
 
-budget_csv = os.path.join("/Users/jacktemme/Desktop/python-challenge/PyBank/Resources/budget_data.csv")
+budget_csv = "/Users/jacktemme/Desktop/python-challenge/PyBank/Resources/budget_data.csv"
 
 
 months = []
