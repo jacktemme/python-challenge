@@ -1,9 +1,10 @@
-# python-challenge
+Module 3 Challenge:
 
-https://stackoverflow.com/questions/14674275/skip-first-linefield-in-loop-using-csv-file
 
-firstline = True
-for row in kidfile:
-    if firstline:    #skip first line
-        firstline = False
-        continue
+https://stackoverflow.com/questions/14257373/how-to-skip-the-headers-when-processing-a-csv-file-using-python:
+
+with open("tmob_notcleaned.csv", "rb") as infile, open("tmob_cleaned.csv", "wb") as outfile:
+   reader = csv.reader(infile)
+   next(reader, None)  # skip the headers
+
+   
