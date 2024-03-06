@@ -1,8 +1,7 @@
 import os
 import csv
 
-budget_csv = "/Users/jacktemme/Desktop/python-challenge/PyBank/Resources/budget_data.csv"
-
+budget_csv = "PyBank/Resources/budget_data.csv"
 
 months = []
 profits = []
@@ -42,7 +41,7 @@ print(f"Average: {round(average_change, 2)}")
 print(f"Greatest Increase in profits: {months[date_index + 1]} (${max_change})")
 print(f"Greatest Decrease in profits: {months[date_index1 + 1]} (${min_change})")
 
-out_file = os.path.join("Profit_Results.csv")
+out_file = os.path.join("PyBank/analysis/Profit_Results.csv")
 
 
 with open (out_file,"w", newline="") as file:
