@@ -32,7 +32,7 @@ with open (election_csv, newline="") as file:
         elif row[2] == "Raymon Anthony Doane":
             raymon_votes += 1
 
-# "set" function used to determine candidates who received votes without repeition
+# "set" function used to determine candidates who received votes without repetition
 # reference for candidate variables above          
 candidates_cleaned = list(set(candidates))
 
