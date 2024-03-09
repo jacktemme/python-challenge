@@ -13,7 +13,7 @@ For these two python scripts, this website was referenced to skip the headers of
       reader = csv.reader(infile)
       next(reader, None)  # skip the headers
 
-In the election python script the candidates that received votes was placed through a set function to return only unique value. This website was referenced for how to use this function:
+In the election python script, the candidates that received votes was placed through a set function to return only unique values. This website was referenced for how to use this function:
 
    https://stackoverflow.com/questions/12897374/get-unique-values-from-a-list-in-python:
 
