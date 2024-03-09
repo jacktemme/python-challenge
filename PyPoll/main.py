@@ -2,7 +2,7 @@ import os
 import csv
 
 # import csv using relative path
-election_csv = "PyPoll/Resources/election_data.csv"
+election_csv = os.path.join("PyPoll","Resources","election_data.csv")
 
 
 # Lists to store candidates who received votes
@@ -20,11 +20,11 @@ with open (election_csv, newline="") as file:
     csvreader = csv.reader(file, delimiter = ",")
     header = next (csvreader, None)
 
-# loop through csv file and add candidates to list
+# loop through csv file and add candidates to array
     for row in csvreader: 
         candidates.append(row[2])
-
-    # count up votes for each candidate
+        
+    # count up votes for each candidate (added to code after candidates were determined)
         if row[2] == "Charles Casper Stockham":
             charles_votes += 1
         elif row[2] == "Diana DeGette":
@@ -32,9 +32,10 @@ with open (election_csv, newline="") as file:
         elif row[2] == "Raymon Anthony Doane":
             raymon_votes += 1
 
-# "set" function used to determine candidates who received votes without repeition
+# "set" function used to determine candidates who received votes without repetition
 # reference for candidate variables above          
 candidates_cleaned = list(set(candidates))
+#print(candidates_cleaned)
 
 # calculate percentages and total votes
 total_votes = len(candidates)
@@ -61,7 +62,7 @@ print(f"Winner : {winner}")
 
 
 # create output file and write the results to it
-output_file = os.path.join ("PyPoll/analysis/Election_results.csv")
+output_file = os.path.join ("PyPoll","analysis","Election_results.csv")
 
 with open (output_file, "w", newline = "") as file:
     writer = csv.writer(file)

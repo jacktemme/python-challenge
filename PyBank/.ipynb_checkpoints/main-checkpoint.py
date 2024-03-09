@@ -2,7 +2,7 @@ import os
 import csv
 
 # import csv using relative path
-budget_csv = os.path.join("PyBank","Resources","budget_data.csv")
+budget_csv = "PyBank/Resources/budget_data.csv"
 
 # set up variables for iterations
 months = []
@@ -10,14 +10,14 @@ profits = []
 profit_change = []
 total_amount = 0
 
-# open file to read skip and store header
+# open file to read
 with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     header = next(csvreader, None)
 
-# loop through csv file to calculate total amount 
-# and output the month and profit/losses column 
+# loop through csv file and otput the month and profit/losses
     for row in csvreader:
+        print(row)
         total_amount = total_amount + int(row[1])
         months.append(row[0])
         profits.append(row[1])
@@ -45,7 +45,7 @@ print(f"Greatest Increase in profits: {months[date_index + 1]} (${max_change})")
 print(f"Greatest Decrease in profits: {months[date_index1 + 1]} (${min_change})")
 
 # create a csv file to write results to
-out_file = os.path.join("PyBank","analysis","Profit_Results.csv")
+out_file = os.path.join("PyBank/analysis/Profit_Results.csv")
 
 with open (out_file,"w", newline="") as file:
     writer = csv.writer(file)
