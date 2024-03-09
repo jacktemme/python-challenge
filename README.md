@@ -13,6 +13,11 @@ For these two python scripts, this website was referenced to skip the headers of
       reader = csv.reader(infile)
       next(reader, None)  # skip the headers
 
+
+To find the change between profits in the pybank script, chat gpt was used to figure out how to set up the idea for my code:
+
+    changes = [row[i] - row[i-1] for i in range(1, len(row))]
+
 In the election python script, the candidates that received votes was placed through a set function to return only unique values. This website was referenced for how to use this function:
 
    https://stackoverflow.com/questions/12897374/get-unique-values-from-a-list-in-python:
