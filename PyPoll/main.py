@@ -15,7 +15,7 @@ charles_votes = 0
 diana_votes = 0
 raymon_votes = 0
 
-# open file to read
+# open file to read, skip and store header
 with open (election_csv, newline="") as file:
     csvreader = csv.reader(file, delimiter = ",")
     header = next (csvreader, None)
