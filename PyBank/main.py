@@ -10,7 +10,7 @@ profits = []
 profit_change = []
 total_amount = 0
 
-# open file to read skip and store header
+# open file to read, skip and store header
 with open(budget_csv) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     header = next(csvreader, None)
@@ -22,7 +22,7 @@ with open(budget_csv) as csvfile:
         months.append(row[0])
         profits.append(row[1])
 
-# from profit list determine profit changes over time
+# from profit list determine profit changes over time 
 for x in range(1, len(profits)):
     profit_change.append((int((profits[x])) - (int(profits[x-1]))))
 
